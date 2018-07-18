@@ -26,7 +26,7 @@ export const LogIn = props => {
 
             <div>
                 <p>Don't have an account?</p>
-                <button type="submit" >Signup</button>
+                <Link to="/calendar"><button type="submit" >Signup</button></Link>
             </div>
         </div>
     )
