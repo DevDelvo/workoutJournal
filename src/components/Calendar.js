@@ -46,7 +46,7 @@ const customSlotPropGetter = date => {
 }
 
 let Rendering = () => (
-    <div>
+    <div className="calendar">
     <h1>Calendar</h1>
     <BigCalendar
         events={events}
