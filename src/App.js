@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Calendar from './components/Calendar'
-import { LogIn } from './components/LogIn'
+import MenuBar from './components/Menubar'
 import Routes from './routes';
 
 class App extends Component {
@@ -17,7 +16,8 @@ class App extends Component {
       //   </p>
       // </div>
       <div>
-        <LogIn />
+        <MenuBar />
+        <Routes />
       </div>
     );
   }

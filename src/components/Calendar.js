@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import Calendar from 'react-calendar';
+import CalendarDay from './CalendarDay'
 
 class liftingCalendar extends Component {
     state = {
         date: new Date(),
     }
 
-    onchange = date => {
+    onChange = date => {
         this.setState({ date })
     }
 
@@ -14,7 +15,7 @@ class liftingCalendar extends Component {
         return (
             <div>
                 <Calendar
-                    onchange={this.onChange}
+                    onChange={this.onChange}
                     value={this.state.date}
                 />
             </div>

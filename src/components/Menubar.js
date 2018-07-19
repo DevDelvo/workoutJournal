@@ -29,16 +29,16 @@ class MenuAppBar extends React.Component {
         const { classes } = this.props;
 
         return (
-            <div className={classes.root}>
+            <div className={styles.root}>
             <AppBar position="static">
                 <Toolbar>
                     <SwipeableDrawer />
                     <Typography
                         variant="title"
                         color="inherit"
-                        className={classes.flex}
+                        className={styles.flex}
                     >
-                        <Link to="/home" className={classes.link}>
+                        <Link to="/home" className={styles.link}>
                             Lifting Journal
                         </Link>
                     </Typography>
@@ -47,6 +47,10 @@ class MenuAppBar extends React.Component {
             </div>
         )
     }
+}
+
+MenuAppBar.PropTypes = {
+    classes: PropTypes.object.isRequired
 }
 
 export default MenuAppBar

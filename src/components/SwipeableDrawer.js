@@ -6,7 +6,7 @@ import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
-import { Link } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const styles = {
@@ -26,9 +26,9 @@ class SwipeableTemporaryDrawer extends React.Component {
         open: false
     };
 
-    toggleDrawer = open => () => {
+    toggleDrawer = (open) => () => {
         this.setState({
-            open
+            open,
         })
     }
 
@@ -36,7 +36,7 @@ class SwipeableTemporaryDrawer extends React.Component {
         const { classes } = this.props;
 
         const loggedInList = (
-            <div className={classes.list}>
+            <div className={styles.list}>
                 <List>
                     <Link to="/home">Home</Link>
                 </List>
@@ -57,12 +57,12 @@ class SwipeableTemporaryDrawer extends React.Component {
 
         return (
             <div>
-                <IconButton
-                    aria-owns={open ? 'menu-appbar' : null}
+                 <IconButton
+                    aria-owns={open ? 'menu-appbar' : null} //eslint-disable-line
                     aria-haspopup="true"
                     onClick={this.toggleDrawer(true)}
                     color="inherit"
-                >
+                    >
                     <MenuIcon />
                 </IconButton>
                 <SwipeableDrawer
@@ -82,6 +82,10 @@ class SwipeableTemporaryDrawer extends React.Component {
             </div>
         )
     }
+}
+
+SwipeableTemporaryDrawer.propTypes = {
+    classes: PropTypes.object.isRequired
 }
 
 export default SwipeableTemporaryDrawer
