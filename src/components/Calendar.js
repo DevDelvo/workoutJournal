@@ -8,60 +8,21 @@ import globalize from 'globalize'
 
 localizer(globalize)
 
-function Event({ event }) {
-    return (
-        <span>
-            <strong>{event.title}</strong>
-            {event.desc && ': ' + event.desc}
-        </span>
-    )
-}
+import('react-big-calendar/lib/css/react-big-calendar.css')
 
-function EventAgenda( { event }) {
-    return (
-        <span>
-            <em style={{ color: 'magenta '}}>{event.title}</em>
-            <p>{event.desc}</p>
-        </span>
-    )
-}
+class Rendering extends React.Component {
+    constructor() {
+        super()
+    }
 
-const customDayPropGetter = date => {
-    if (date.getDate() === 7 || date.getDate() === 15)
-        return {
-            className: 'special-day',
-            style: {
-                border: 'solid 3px ' + (date.getDate() === 7 ? '#faa' : '#afa'),
-            },
-        }
-    else return {}
+    render() {
+        return (
+            <BigCalendar
+                style={{height: '420px'}}
+                events={[]}
+            />
+        )
+    }
 }
-
-const customSlotPropGetter = date => {
-    if (date.getDate() === 7 || date.getDate() === 15)
-        return {
-            className: 'special-day',
-        }
-    else return {}
-}
-
-let Rendering = () => (
-    <div className="calendar">
-    <h1>Calendar</h1>
-    <BigCalendar
-        events={events}
-        defaultDate={new Date(2018, 7, 1)}
-        defaultView={BigCalendar.Views.AGENDA}
-        dayPropGetter={customDayPropGetter}
-        slotPropGetter={customSlotPropGetter}
-        components={{
-            event: Event,
-            agenda: {
-                event: EventAgenda
-            }
-        }}
-    />
-    </div>
-)
 
 export default Rendering
