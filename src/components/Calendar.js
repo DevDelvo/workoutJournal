@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import BigCalendar from 'react-big-calendar';
-import CalendarDay from './CalendarDay'
+import CalendarDay from './RoutineDay'
 import events from '../events'
 // import { getEvents } from '../gCal'
 
@@ -37,7 +37,14 @@ class Rendering extends React.Component {
                 defaultView={BigCalendar.Views.WEEK}
                 // scrollToTime={new Date(1970, 1, 1, 6)}
                 // defaultDate={new Date(2015, 3, 12)}
-                onSelectEvent={event => alert(event.title)}
+                onSelectEvent={event => 
+                    alert(
+                    `Event: ${event.title}` +
+                    `\nStart: ${event.start}` +
+                    `\nEnd: ${event.end}` +
+                    `\nDescription: ${event.desc}`
+                    )
+                }
                 onSelectSlot={slotInfo =>
                     alert(
                     `selected slot: \n\nstart ${slotInfo.start.toLocaleString()} ` +

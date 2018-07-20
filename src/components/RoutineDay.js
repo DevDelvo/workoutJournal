@@ -1,18 +1,19 @@
 import React, { Component } from 'react'
 
-class CalendarDay extends Component {
+class RoutineDay extends Component {
     state = {
-        date: new Date()
+        date: '',
+        workOuts: []
     }
 
     render() {
         const date = this.props.date
         return (
             <div>
-                hi!
+                List of routines for the day!
             </div>
         )
     }
 }
 
-export default CalendarDay
+export default RoutineDay
