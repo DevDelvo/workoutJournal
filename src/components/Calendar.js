@@ -30,7 +30,7 @@ class Rendering extends React.Component {
         console.log(this.state.events)
         return (
             <BigCalendar
-                style={{height: '420px'}}
+                style={{height: '850px'}}
                 // events={this.state.events}
                 selectable
                 events={this.state.events}

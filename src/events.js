@@ -89,8 +89,8 @@ export default [
   {
     id: 13,
     title: 'Multi-day Event',
-    start: new Date(2018, 3, 20, 19, 30, 0),
-    end: new Date(2018, 3, 22, 2, 0, 0),
+    start: new Date(2018, 7, 3, 19, 30, 0),
+    end: new Date(2018, 7, 3, 2, 0, 0),
   },
   {
     id: 14,
@@ -98,4 +98,11 @@ export default [
     start: new Date(new Date().setHours(new Date().getHours() - 3)),
     end: new Date(new Date().setHours(new Date().getHours() + 3)),
   },
+  {
+    id: 15,
+    title:' Workout!',
+    start: new Date(2018, 7, 2, 19, 0, 0),
+    end: new Date(2018, 7, 2, 22, 0, 0),
+    desc: 'Squats, Bench, Deadlift bruh'
+  }
 ]
