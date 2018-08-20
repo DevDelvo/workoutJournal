@@ -26,6 +26,10 @@ class Rendering extends React.Component {
         this.setState({events})
     }
 
+    routineRedirect = () => {
+        this.props.history.push(`/routine`)
+    }
+    
     render() {
         console.log(this.state.events)
         return (
@@ -37,13 +41,15 @@ class Rendering extends React.Component {
                 defaultView={BigCalendar.Views.WEEK}
                 // scrollToTime={new Date(1970, 1, 1, 6)}
                 // defaultDate={new Date(2015, 3, 12)}
-                onSelectEvent={event => 
-                    alert(
-                    `Event: ${event.title}` +
-                    `\nStart: ${event.start}` +
-                    `\nEnd: ${event.end}` +
-                    `\nDescription: ${event.desc}`
-                    )
+                onSelectEvent={
+                    // event => 
+                    // alert(
+                    // `Event: ${event.title}` +
+                    // `\nStart: ${event.start}` +
+                    // `\nEnd: ${event.end}` +
+                    // `\nDescription: ${event.desc}`
+                    // )
+                    this.routineRedirect
                 }
                 onSelectSlot={slotInfo =>
                     alert(
