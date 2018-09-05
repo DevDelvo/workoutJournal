@@ -10,14 +10,14 @@ class Routes extends Component {
  
     render() {
         return (
-            <BrowserRouter>
+
                 <Switch>
                     <Route exact path="/login" component={LogIn} />
                     {/* <Route exact path="/home" component={Home} /> */}
                     <Route path="/calendar" component={Calendar} />
-                    <Route path="/routine" component={RoutineDay} />
+                    <Route path="/routine/:date" component={RoutineDay} />
                 </Switch>
-            </BrowserRouter>
+       
         )
     }
 }

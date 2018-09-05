@@ -2,15 +2,31 @@ import React, { Component } from 'react'
 
 class RoutineDay extends Component {
     state = {
-        date: '',
-        workOuts: []
+        id: 0,
+        title: '',
+        start: '',
+        end: '',
+        desc: '',
+        workouts: {},
+    }
+
+    componentDidMount() {
+        const { id, start, end, title, workouts } = this.props.location.state.event
+        this.setState({
+            id, title, start, end, workouts
+        })
     }
 
     render() {
-        const date = this.props.date
+        const { id, start, end, title, workouts } = this.state;
+        const { squat, bench, deadlift } = workouts;
+        console.log(this.state)
         return (
             <div>
-                List of routines for the day!
+                {
+                    workouts !== {} ? squat : 'Loading'
+                    // start !== '' ? start.getDate() : 'Loading'
+                }
             </div>
         )
     }

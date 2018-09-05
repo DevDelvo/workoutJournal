@@ -97,6 +97,11 @@ export default [
     title: 'Today',
     start: new Date(new Date().setHours(new Date().getHours() - 3)),
     end: new Date(new Date().setHours(new Date().getHours() + 3)),
+    workouts: {
+      squat: [0, 0, 0, 0, 0],
+      bench: [0, 0, 0, 0, 0],
+      deadlift: [0, 0, 0, 0, 0],
+    }
   },
   {
     id: 15,
