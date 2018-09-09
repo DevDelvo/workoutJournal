@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import BigCalendar from 'react-big-calendar';
 import CalendarDay from './RoutineDay'
 import events from '../events'
+import { getRoutinePath } from './routeConstants'
 // import { getEvents } from '../gCal'
 
 import localizer from 'react-big-calendar/lib/localizers/globalize'
@@ -30,7 +31,7 @@ class Rendering extends React.Component {
 
         const date = `${event.start.getFullYear()}-${event.start.getMonth() + 1}-${event.start.getDate()}`
         this.props.history.push({
-            pathname: `/routine/${event.id}`,
+            pathname: getRoutinePath(date),
             state: { event }
     })
     }
@@ -40,7 +41,6 @@ class Rendering extends React.Component {
         return (
             <BigCalendar
                 style={{height: '850px'}}
-                // events={this.state.events}
                 selectable
                 events={this.state.events}
                 defaultView={BigCalendar.Views.WEEK}
