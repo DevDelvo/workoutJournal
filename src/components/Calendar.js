@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import BigCalendar from 'react-big-calendar';
 import CalendarDay from './RoutineDay'
 import events from '../events'
+import { getRoutinePath } from './routeConstants'
 // import { getEvents } from '../gCal'
 
 import localizer from 'react-big-calendar/lib/localizers/globalize'
@@ -26,30 +27,34 @@ class Rendering extends React.Component {
         this.setState({events})
     }
 
-    routineRedirect = () => {
-        this.props.history.push(`/routine`)
+    routineRedirect = (event) => {
+
+        const date = `${event.start.getFullYear()}-${event.start.getMonth() + 1}-${event.start.getDate()}`
+        this.props.history.push({
+            pathname: getRoutinePath(date),
+            state: { event }
+    })
     }
     
     render() {
-        console.log(this.state.events)
+        // console.log(this.state.events)
         return (
             <BigCalendar
                 style={{height: '850px'}}
-                // events={this.state.events}
                 selectable
                 events={this.state.events}
                 defaultView={BigCalendar.Views.WEEK}
                 // scrollToTime={new Date(1970, 1, 1, 6)}
                 // defaultDate={new Date(2015, 3, 12)}
                 onSelectEvent={
-                    // event => 
+                    event => 
                     // alert(
                     // `Event: ${event.title}` +
                     // `\nStart: ${event.start}` +
                     // `\nEnd: ${event.end}` +
                     // `\nDescription: ${event.desc}`
                     // )
-                    this.routineRedirect
+                    this.routineRedirect(event)
                 }
                 onSelectSlot={slotInfo =>
                     alert(
