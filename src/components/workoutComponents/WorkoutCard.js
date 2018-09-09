@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 
 class WorkoutCard extends Component {
     render() {
+        const { workout } = this.props
+        console.log(workout)
         return(
             <div>
-                Work out card!
+                <p>Work out card!</p>
+                Name: {workout.name}
             </div>
         )
     }

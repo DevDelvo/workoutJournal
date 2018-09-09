@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import WorkoutCard from './index'
+import WorkoutCard from './WorkoutCard'
 import workouts from '../../DUMMYDATA/workouts'
 
 
@@ -16,9 +16,13 @@ class WorkoutPage extends Component {
     }
     
     render() {
+        const { workouts } = this.state
         return (
             <div>
-                Workout Page!
+                Workouts:
+                {
+                    workouts.map(workout => <WorkoutCard workout={workout}/>)
+                }
             </div>
         )
     }

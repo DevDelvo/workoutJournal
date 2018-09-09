@@ -1,2 +1,2 @@
-export { WorkoutPage } from './WorkoutPage'
-export { WorkoutCard } from './WorkoutCard'
+export { WorkoutPage } from './WorkoutPage.js';
+export { WorkoutCard } from './WorkoutCard.js';

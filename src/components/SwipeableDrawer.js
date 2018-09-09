@@ -56,7 +56,7 @@ class SwipeableTemporaryDrawer extends React.Component {
                 </List>
                 <Divider className={classes.divide} />
                 <List>
-                    <Link className={classes.list} to="/workouts">Work outs</Link>
+                    <Link className={classes.list} to="/workouts">Workouts</Link>
                 </List>
                 <Divider className={classes.divide} />
                 <List>

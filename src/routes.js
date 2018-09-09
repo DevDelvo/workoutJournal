@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import Calendar from './components/Calendar';
 import { LogIn } from './components/LogIn';
 import RoutineDay from './components/RoutineDay'
-import { WorkoutPage } from './components/workoutComponents'
+import WorkoutPage from './components/workoutComponents/WorkoutPage'
 
 class Routes extends Component {
  
