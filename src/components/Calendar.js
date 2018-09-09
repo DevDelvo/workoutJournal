@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import BigCalendar from 'react-big-calendar';
-import CalendarDay from './RoutineDay'
 import events from '../events'
 import { getRoutinePath } from './routeConstants'
 // import { getEvents } from '../gCal'
@@ -12,7 +11,7 @@ localizer(globalize)
 
 import('react-big-calendar/lib/css/react-big-calendar.css')
 
-class Rendering extends React.Component {
+class Rendering extends Component {
     constructor() {
         super()
         this.state = {
