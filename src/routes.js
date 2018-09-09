@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import Calendar from './components/Calendar';
 import { LogIn } from './components/LogIn';

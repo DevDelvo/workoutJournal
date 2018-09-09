@@ -7,14 +7,24 @@ import Divider from '@material-ui/core/Divider';
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 
 const styles = {
-    list: {
-        width: 250,
-    },
     fullList: {
         width: 'auto',
+        backgroundColor: 'black',
+    },
+    list: {
+        color: 'black',
+        margin: '.5em',
+        lineHeight: 1.8,
+        textDecoration: 'none',
+        textTransform: 'uppercase',
+        fontWeight: 'bold'
+    },
+    divide: {
+        backgroundColor: 'blue',
+        height: "5px",
     },
     logoutButton: {
         color: 'blue',
@@ -36,21 +46,21 @@ class SwipeableTemporaryDrawer extends React.Component {
         const { classes } = this.props;
 
         const loggedInList = (
-            <div className={styles.list}>
+            <div className={classes.list}>
                 <List>
-                    <Link to="/home">Home</Link>
+                    <Link className={classes.list} to="/home" >Home</Link>
                 </List>
-                <Divider />
-                <List>
-                    <Link to="/calendar">Calendar</Link>
+                <Divider className={classes.divide} />
+                <List >
+                    <Link className={classes.list} to="/calendar">Calendar</Link>
                 </List>
-                <Divider />
+                <Divider className={classes.divide} />
                 <List>
-                    <Link to="/workOuts">Work outs</Link>
+                    <Link className={classes.list} to="/workOuts">Work outs</Link>
                 </List>
-                <Divider />
+                <Divider className={classes.divide} />
                 <List>
-                    <Link to="/profile">Profile</Link>
+                    <Link className={classes.list} to="/profile">Profile</Link>
                 </List>
             </div>
         )
@@ -88,4 +98,4 @@ SwipeableTemporaryDrawer.propTypes = {
     styles: propTypes.object.isRequired
 }
 
-export default SwipeableTemporaryDrawer
+export default withStyles(styles)(SwipeableTemporaryDrawer)

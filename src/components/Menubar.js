@@ -5,8 +5,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import SwipeableDrawer from './SwipeableDrawer';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+// import { connect } from 'react-redux';
 
 const styles = {
     root: {
@@ -20,7 +20,9 @@ const styles = {
         marginRight: 20,
     },
     link: {
-        color: 'white'
+        color: 'white',
+        textDecoration: 'none',
+        fontWeight: 'bold'
     }
 }
 
@@ -29,17 +31,17 @@ class MenuAppBar extends React.Component {
         const { classes } = this.props;
 
         return (
-            <div className={styles.root}>
+            <div className={classes.root}>
             <AppBar position="static">
                 <Toolbar>
                     <SwipeableDrawer />
                     <Typography
                         variant="title"
                         color="inherit"
-                        className={styles.flex}
+                        className={classes.flex}
                     >
-                        <Link to="/home" className={styles.link}>
-                            Lifting Journal
+                        <Link to="/home" className={classes.link}>
+                            Heavy Lift Logger 
                         </Link>
                     </Typography>
                 </Toolbar>
@@ -53,4 +55,4 @@ MenuAppBar.propTypes = {
     classes: propTypes.object.isRequired
 }
 
-export default MenuAppBar
+export default withStyles(styles)(MenuAppBar)

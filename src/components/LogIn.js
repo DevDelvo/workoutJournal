@@ -1,6 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+// import { connect } from 'react-redux';
+// import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 export const LogIn = props => {
@@ -26,7 +26,7 @@ export const LogIn = props => {
 
             <div>
                 <p>Don't have an account?</p>
-                <Link to="/calendar"><button type="submit" >Signup</button></Link>
+                <Link to="/signup"><button type="submit">Signup</button></Link>
             </div>
         </div>
     )

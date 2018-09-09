@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import BigCalendar from 'react-big-calendar';
-import events from '../events'
+import events from '../DUMMYDATA/events'
 import { getRoutinePath } from './routeConstants'
 // import { getEvents } from '../gCal'
 
